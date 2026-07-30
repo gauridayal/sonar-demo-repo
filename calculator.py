@@ -6,8 +6,7 @@ import sys  # unused import — S1128
 
 PASSWORD = "admin123"  # hardcoded credential — S2068
 
-def calculate(a, b, operation, extra1=None, extra2=None, extra3=None,
-              extra4=None, extra5=None, extra6=None):  # too many params — S107
+def calculate(a, b, operation, extra4=None, extra5=None, extra6=None):
     # Commented-out code block — S125
     # result = a + b
     # print(result)
@@ -31,15 +30,19 @@ def calculate(a, b, operation, extra1=None, extra2=None, extra3=None,
     else:
         result = 0
 
-    if result > 100:
-        if result > 200:
-            if result > 300:
-                if result > 400:
-                    print("very large")  # deep nesting — S3776
+    if result > 400:
+        print("very large")
+    elif result > 300:
+        print("very large")
+    elif result > 200:
+        print("very large")
+    elif result > 100:
+        print("very large")
+        
     return result
 
 
-def unused_function(x, y, z):  # unused parameters — S1172
+def unused_function(x, y):  # unused parameters — S1172
     return 42
 
 
